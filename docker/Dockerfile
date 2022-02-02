@@ -8,9 +8,9 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # 画像処理したい人向け
 
-RUN apt-get update &&\
-        apt-get -y install software-properties-common
-RUN add-apt-repository -y ppa:alex-p/tesseract-ocr-devel
+# RUN apt-get update &&\
+#         apt-get -y install software-properties-common
+# RUN add-apt-repository -y ppa:alex-p/tesseract-ocr-devel
 
 RUN apt-get update && apt-get -y upgrade
 RUN apt-get -y install python3-dev python3-pip python3-setuptools jupyter && \
@@ -68,7 +68,7 @@ RUN pip3 install opencv-python \
 RUN echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | debconf-set-selections \
     && apt-get install -y ttf-mscorefonts-installer
 
-EXPOSE 22
+# EXPOSE 22
 
 # docker build -t psymonmarkrine:img_prcs .
 # docker run --name img --gpus all -d -p 10022:22 -it psymonmarkrine:img_prcs
